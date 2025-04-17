@@ -31,21 +31,25 @@ As to keep parsing as simple as possible, a concise binary protocol will suffice
 
 ### Enable valve by index
 
-Direction: Client->Server
-Command: `0`
+Direction: Client->Server\
+Command: `0`\
 Arguments:
   - Valve-index byte
 
 ### Disable active valve
 
-Direction: Client->Server
-Command: `1`
+Direction: Client->Server\
+Command: `1`\
 Arguments: none
 
 ### Valves state change
 
-Direction: Server->Client
-Command: `2`
+Direction: Server->Client\
+Command: `2`\
 Arguments:
   - Valve-count byte
   - Bit-packed state bytes, index increasing left to right
+
+## Reminder-Notes
+
+- 12VDC over the H-bridge doesn't suffice to trigger all kinds of valves I own; `24VAC * sqrt(2) ~= 34V P2P` => add a boost-converter onto the prototype.
