@@ -1,0 +1,9 @@
+<h1>Valve {{valveIndex + 1}}</h1>
+
+<div
+  class="toggle-button"
+  [class.toggle-button--active]="valveState"
+  (click)="toggle()"
+>
+  <p>{{valveState ? "disable" : "enable"}}</p>
+</div>

@@ -1,0 +1,5 @@
+<app-valve-button
+  *ngFor="let state of (getValveStates() | async); index as i"
+  [valveIndex]="i"
+  [valveState]="state"
+></app-valve-button>
